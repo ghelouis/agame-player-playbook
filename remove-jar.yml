@@ -1,0 +1,8 @@
+---
+
+- name: remove jar
+  hosts: all
+  roles:
+    - remove-jar
+  vars_files:
+    - vars.yml

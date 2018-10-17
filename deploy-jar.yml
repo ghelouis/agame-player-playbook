@@ -1,0 +1,14 @@
+---
+
+- name: deploy jar
+  hosts: all
+  roles:
+    - deploy-jar
+  vars_files:
+    - vars.yml
+  vars:
+    daemon_file: "{{ role_path }}/files/{{ daemon }}.service"
+    daemon_directory: "{{ ansible_env.HOME }}/.config/systemd/user/"
+
+    # TODO: adapt path to jar
+    jar_src: "/path/to/{{ jar }}"

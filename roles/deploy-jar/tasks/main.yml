@@ -1,0 +1,20 @@
+---
+
+# TODO: copy jar to HOME
+
+- name: setup daemon directory
+  file:
+    path: "{{ daemon_directory }}"
+    state: directory
+
+- name: setup daemon file
+  copy:
+    src: "{{ daemon_file }}"
+    dest: "{{ daemon_directory }}"
+
+- name: start daemon
+  systemd:
+    name: "{{ daemon }}"
+    user: yes
+    daemon_reload: yes
+    state: started

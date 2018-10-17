@@ -1,0 +1,14 @@
+---
+
+# TODO: remove jar
+
+- name: remove logs
+  file:
+    path: "{{ ansible_env.HOME }}/client.log"
+    state: absent
+
+- name: stop daemon
+  systemd:
+    name: "{{ daemon }}"
+    user: yes
+    state: stopped

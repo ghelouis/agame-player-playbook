@@ -1,0 +1,6 @@
+---
+
+daemon: app
+
+# TODO: add jar variable
+# TODO: adapt roles/deploy-jar/files/app.service

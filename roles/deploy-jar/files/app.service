@@ -1,0 +1,6 @@
+[Unit]
+Description=App
+
+[Service]
+ExecStart=java -jar %h/client-1.0-SNAPSHOT.jar # TODO: adapt jar name
+StandardOutput=file:%h/client.log
